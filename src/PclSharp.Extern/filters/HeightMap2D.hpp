@@ -73,8 +73,8 @@ namespace pcl
 
 		public:
 			typedef pcl::PointCloud<PointT> PointCloud;
-			typedef boost::shared_ptr<PointCloud> PointCloudPtr;
-			typedef boost::shared_ptr<const PointCloud> PointCloudConstPtr;
+			typedef shared_ptr<PointCloud> PointCloudPtr;
+			typedef shared_ptr<const PointCloud> PointCloudConstPtr;
 
 			HeightMap2D() :
 				buckets_(),
