@@ -21,33 +21,33 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6A3A2E07-D32B-4B2D-86AD-BE625BFC3282}</ProjectGuid>
     <RootNamespace>Pclinvoke</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>PclSharp.Extern</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -74,11 +74,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>e:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Boost\include\boost-1_73\;e:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Eigen\eigen3\;E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\FLANN\include;e:\sync_src\libs\cpp\PCL-1.11.0\include\pcl-1.11\;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Boost\lib"E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Boost\lib";E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\FLANN\lib;e:\sync_src\libs\cpp\PCL-1.11.0\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>e:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Boost\include\boost-1_73\;e:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Eigen\eigen3\;E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\FLANN\include;e:\sync_src\libs\cpp\PCL-1.11.0\include\pcl-1.11\;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Boost\lib"E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\Boost\lib";E:\sync_src\libs\cpp\PCL-1.11.0\3rdParty\FLANN\lib;e:\sync_src\libs\cpp\PCL-1.11.0\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)..\bin\$(Platform)\$(Configuration)\</OutDir>
@@ -126,20 +130,53 @@
     <ClInclude Include="export.h" />
     <ClInclude Include="filters\HeightMap2D.hpp" />
   </ItemGroup>
-  <ItemGroup>    
+  <ItemGroup>
+    <ClCompile Include="common\ModelCoefficients.generated.cpp" />
+    <ClCompile Include="common\PCAOfXYZ.generated.cpp" />
+    <ClCompile Include="common\PclBaseOfXYZ.generated.cpp" />
+    <ClCompile Include="common\PclBaseOfXYZRGBA.generated.cpp" />
+    <ClCompile Include="common\PointIndices.generated.cpp" />
+    <ClCompile Include="eigen\Matrix4f.generated.cpp" />
+    <ClCompile Include="eigen\VectorXf.generated.cpp" />
+    <ClCompile Include="features\FPFHEstimationOfPointXYZAndNormal.generated.cpp" />
+    <ClCompile Include="features\IntegralImageNormalEstimationOfPointXYZAndNormal.generated.cpp" />
+    <ClCompile Include="filters\ExtractIndicesXYZ.generated.cpp" />
+    <ClCompile Include="filters\Heightmap2DOfXYZ.generated.cpp" />
+    <ClCompile Include="filters\StatisticalOutlierRemovalOfXYZ.generated.cpp" />
+    <ClCompile Include="filters\VoxelGridOfXYZ.generated.cpp" />
+    <ClCompile Include="io\PCDReader.generated.cpp" />
+    <ClCompile Include="pointcloud\PointCloudOfNormal.generated.cpp" />
+    <ClCompile Include="pointcloud\PointCloudOfXYZ.generated.cpp" />
+    <ClCompile Include="pointcloud\PointCloudOfXYZL.generated.cpp" />
+    <ClCompile Include="pointcloud\PointCloudOfXYZRGBA.generated.cpp" />
+    <ClCompile Include="pointcloud\PolygonMesh.generated.cpp" />
     <ClCompile Include="PointSizes.cpp" />
-    <ClCompile Include="common\*.cpp" />
-    <ClCompile Include="eigen\*.cpp" />
-    <ClCompile Include="features\*.cpp" />
-    <ClCompile Include="filters\*.cpp" />
-    <ClCompile Include="io\*.cpp" />
-    <ClCompile Include="pointcloud\*.cpp" />
-    <ClCompile Include="sampleconsensus\*.cpp" />
-    <ClCompile Include="search\*.cpp" />
-    <ClCompile Include="segmentation\*.cpp" />
-    <ClCompile Include="std\*.cpp" />
-    <ClCompile Include="surface\*.cpp" />
-    <ClCompile Include="registration\*.cpp" />
+    <ClCompile Include="registration\iterativeclosestpointofpointxyz_pointxyz.generated.cpp" />
+    <ClCompile Include="registration\TransformationEstimationPointToPlaneLLSOfPointNormal_PointNormal.generated.cpp" />
+    <ClCompile Include="sampleconsensus\SampleConsensusModelPlaneOfXYZ.generated.cpp" />
+    <ClCompile Include="search\KdTreeOfXYZ.generated.cpp" />
+    <ClCompile Include="search\OrganizedNeighborOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\CPCSegmentationOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\EuclideanClusterExtractionOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\LCCPSegmentationOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\SACSegmentationOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\SupervoxelClusteringOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\SupervoxelClusteringOfXYZRGBA.generated.cpp" />
+    <ClCompile Include="segmentation\SupervoxelClustersOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\SupervoxelClustersOfXYZRGBA.generated.cpp" />
+    <ClCompile Include="segmentation\SupervoxelOfXYZ.generated.cpp" />
+    <ClCompile Include="segmentation\SupervoxelOfXYZRGBA.generated.cpp" />
+    <ClCompile Include="std\MultiMapOfuintAnduint.generated.cpp" />
+    <ClCompile Include="std\VectorOfByte.generated.cpp" />
+    <ClCompile Include="std\VectorOfFloat.generated.cpp" />
+    <ClCompile Include="std\VectorOfInt.generated.cpp" />
+    <ClCompile Include="std\VectorOfNormal.generated.cpp" />
+    <ClCompile Include="std\VectorOfPointIndices.generated.cpp" />
+    <ClCompile Include="std\VectorOfUInt.generated.cpp" />
+    <ClCompile Include="std\VectorOfXYZ.generated.cpp" />
+    <ClCompile Include="std\VectorOfXYZL.generated.cpp" />
+    <ClCompile Include="std\VectorOfXYZRGBA.generated.cpp" />
+    <ClCompile Include="surface\ConvexHullOfXYZ.generated.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
